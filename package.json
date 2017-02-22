@@ -1,0 +1,14 @@
+{
+  "name": "tts-xp-home-automation",
+  "version": "1.0.0",
+  "description": "Backend application for home automation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Unger",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
