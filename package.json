@@ -9,6 +9,16 @@
   "author": "Thomas Unger",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.1"
-  }
+    "express": "^4.14.1",
+    "hapi": "16.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomUn/tts-xp-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ThomUn/tts-xp-backend/issues"
+  },
+  "homepage": "https://github.com/ThomUn/tts-xp-backend#readme"
 }
