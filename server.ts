@@ -10,16 +10,31 @@ server.connection({
     port: 3000
 });
 
-server.route({
-    method: 'GET',
-    path:'/hello/{name}',
-    handler: function (request, reply) {
+server.route([{
+        method: 'GET',
+        path: '/hello/{name}',
+        handler: function (request, reply) {
 
-        return reply('hefgfdglsdfsdfsdfhlo ' + request.params['name']);
-    }
-});
+            var test = {
+                "first": "test",
+                "name": "" + request.params['name']
+            }
+            // return reply(JSON.stringify('Hello ' + request.params['name']+ '!'));
+            return reply(test);
+        }
+    },
+    {
+        method: 'GET',
+        path: '/hello',
+        handler: function (request, reply) {
+            return reply(JSON.stringify('Hello!'));
+        }
+    }]);
+
 
 server.start((err) => {
-    if (err) { throw err; }
+    if (err) {
+        throw err;
+    }
     console.log('Server running at:', server.info.uri);
 });

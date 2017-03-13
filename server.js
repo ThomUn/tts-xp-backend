@@ -9,13 +9,25 @@ server.connection({
     host: 'localhost',
     port: 3000
 });
-server.route({
-    method: 'GET',
-    path: '/hello/{name}',
-    handler: function (request, reply) {
-        return reply('hefgfdglsdfsdfsdfhlo ' + request.params['name']);
-    }
-});
+server.route([{
+        method: 'GET',
+        path: '/hello/{name}',
+        handler: function (request, reply) {
+            var test = {
+                "first": "test",
+                "name": "" + request.params['name']
+            };
+            // return reply(JSON.stringify('Hello ' + request.params['name']+ '!'));
+            return reply(test);
+        }
+    },
+    {
+        method: 'GET',
+        path: '/hello',
+        handler: function (request, reply) {
+            return reply(JSON.stringify('Hello!'));
+        }
+    }]);
 server.start(function (err) {
     if (err) {
         throw err;
