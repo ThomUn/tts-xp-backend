@@ -7,13 +7,18 @@ import * as Hapi from 'hapi';
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
-    port: 3000
+    port: 3000,
+    routes: {
+        cors: true
+    }
 });
 
 server.route([{
         method: 'GET',
         path: '/hello/{name}',
         handler: function (request, reply) {
+
+
 
             var test = {
                 "first": "test",
