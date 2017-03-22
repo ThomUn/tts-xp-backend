@@ -2,7 +2,7 @@
  * Created by Thomas on 21.03.2017.
  */
 
-class Color {
+export class Color {
     private red: number;
     private green: number;
     private blue: number;

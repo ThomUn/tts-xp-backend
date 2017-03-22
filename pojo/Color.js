@@ -1,6 +1,7 @@
 /**
  * Created by Thomas on 21.03.2017.
  */
+"use strict";
 var Color = (function () {
     function Color(redC, greenC, blueC) {
         this.redC = redC;
@@ -22,3 +23,4 @@ var Color = (function () {
     };
     return Color;
 }());
+exports.Color = Color;
