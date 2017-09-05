@@ -15,26 +15,17 @@ server.connection({
 });
 
 server.route([{
-    method: 'GET',
-    path: '/hello/{name}',
-    handler: function (request, reply) {
-
-        var test = {
-            "first": "test",
-            "name": "" + request.params['name']
-        }
-        // return reply(JSON.stringify('Hello ' + request.params['name']+ '!'));
-        return reply(test);
-    }
-},
-    {
-        method: 'GET',
-        path: '/toHEX/{red}/{green}/{blue}',
+        method: 'POST',
+        path: '/ledlight/{LEDNUMBER}{ROOM}/{HEX_CODE}',
         handler: function (request, reply) {
-            let newColor = new Color(parseInt(request.params.red), parseInt(request.params.green), parseInt(request.params.blue));
-            return reply(JSON.stringify(newColor.getHEX()));
+            // Verbindungsaufbau zum Home-Automation-System
+            // Finden und Auswahl der richten LED
+            // Setzen der gewünschten Farbe
+            return reply(JSON.stringify('Die LED ' + request.params.LEDNUMBER
+                + ' im Raum ' + request.params.ROOM
+                + ' zeigt nun erfolgreich die Farbe ' + request.params.HEX_CODE + '!'));
         }
-    }]);
+}]);
 
 
 server.start((err) => {
